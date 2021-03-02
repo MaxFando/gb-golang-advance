@@ -20,9 +20,9 @@ func main() {
 		}
 	}()
 
-	file, errCreate := os.Create("./lesson-1/app.txt")
-	if errCreate != nil {
-		log.Println(fmt.Errorf("%w: %s", ErrorCreateFile, errCreate.Error()))
+	file, err := os.Create("./lesson-1/app.txt")
+	if err != nil {
+		log.Fatalf("%w: %s", ErrorCreateFile, err.Error())
 	}
 
 	defer func() {
